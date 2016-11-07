@@ -1,7 +1,0 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" >
-    <StackLayout>
-        <Label text="Set time" textWrap="true" id="time_label"/>
-        <Slider value="50" id="slider" />
-        <Button text="Start" tap="start" id="button"/>
-    </StackLayout>
-</Page>

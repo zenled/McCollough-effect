@@ -1,7 +1,22 @@
-<Page>
-    <StackLayout>
-        <Button Text="Effect" tap="tap_Effect"/>
-        <Button Text="Test"/>
-        <Button Text="About"/>
-    </StackLayout>
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
+    <TabView id="tabViewContainer">
+        <TabView.items>
+            <TabViewItem title="Main">
+                <TabViewItem.view>
+                    <StackLayout>
+                        <Button text="Get effect" tap="get_effect_tap" />
+                        <Button text="About" tap="about_tap"></Button>
+                    </StackLayout>                    
+                </TabViewItem.view>
+            </TabViewItem>
+
+            <TabViewItem title="Test">
+                <TabViewItem.view>
+                    <StackLayout>
+                        
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
 </Page>
