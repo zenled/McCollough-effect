@@ -1,0 +1,7 @@
+<Page>
+    <StackLayout>
+        <Button Text="Effect" tap="tap_Effect"/>
+        <Button Text="Test"/>
+        <Button Text="About"/>
+    </StackLayout>
+</Page>
