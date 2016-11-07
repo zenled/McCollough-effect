@@ -3,3 +3,5 @@ node_modules/
 platforms/
 tmp/
 .vscode
+*.js
+*.js.map
