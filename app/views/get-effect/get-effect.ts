@@ -34,7 +34,7 @@ exports.onLoaded = function(args){
     listPicker_Minutes.items = generateItems(15,"minutes");
 
     ListPicker_Seconds = new listPickerModule.ListPicker();
-    ListPicker_Seconds.items = generateItems(59, "seconds");
+    ListPicker_Seconds.items = generateItems(59, "seconds",10);
 
     timePickingLayout.addChild(listPicker_Minutes);
     timePickingLayout.addChild(ListPicker_Seconds);
@@ -51,9 +51,9 @@ exports.onLoaded = function(args){
 
 }
 
-function generateItems(n: number, ending:string): Array<string>{
+function generateItems(n: number, ending:string, step:number = 1): Array<string>{
     let result:Array<string> = [];
-    for (let i = 0; i <= n; i++){
+    for (let i = 0; i <= n; i+= step){
         result.push(i.toString() + " " + ending);
     }
 

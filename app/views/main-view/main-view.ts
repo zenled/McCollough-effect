@@ -1,5 +1,5 @@
 import frameModule = require("ui/frame");
-let topmost;
+let topmost: frameModule.Frame;
 
 exports.onLoaded = function(args){
   topmost = frameModule.topmost();
