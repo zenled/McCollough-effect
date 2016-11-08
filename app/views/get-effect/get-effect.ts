@@ -3,6 +3,7 @@ import stackLayout = require("ui/layouts/stack-layout");
 import view = require("ui/core/view");
 import listPickerModule = require("ui/list-picker");
 import buttonModule = require("ui/button");
+import application = require("application");
 
 let label_setTime: labelModule.Label;
 let main_layout;
@@ -16,7 +17,28 @@ let ListPicker_Seconds: listPickerModule.ListPicker;
 // Buttons
 let btn_Start: buttonModule.Button;
 
+// Flags
+let initialComponentsLoaded: boolean = false;
+
+//**************************************************************************
+
+if (application.android) {
+    application.android.on(application.AndroidApplication.activityCreatedEvent, function (args: application.AndroidActivityBundleEventData) {
+        console.log("Event: " + args.eventName + ", Activity: " + args.activity + ", Bundle: " + args.bundle);
+    });
+}
+
+
+/*
 exports.onLoaded = function(args){
+
+    if (initialComponentsLoaded){
+        return;
+    }
+    else{
+        initialComponentsLoaded = true;
+    }
+
     page = args.object;
     main_layout =  view.getViewById(page,"main_layout");
 
@@ -49,7 +71,8 @@ exports.onLoaded = function(args){
     main_layout.addChild(timePickingLayout);
     main_layout.addChild(btn_Start);
 
-}
+}*/
+
 
 function generateItems(n: number, ending:string, step:number = 1): Array<string>{
     let result:Array<string> = [];
@@ -61,5 +84,6 @@ function generateItems(n: number, ending:string, step:number = 1): Array<string>
 }
 
 exports.start = function(){
+    console.log("Button START pressed");
     //myLabel.visibility="collapsed";
 }
