@@ -1,4 +1,35 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
-    <StackLayout id="main_layout" orientation="vertical">
-    </StackLayout>
+    <TabView id="tabViewContainer">
+        <TabView.items>
+            <TabViewItem title="Get">
+                <TabViewItem.view>
+                    <DockLayout>
+                        <StackLayout dock="bottom">
+                            <Button width="100%" height="auto" text="Start" tap="onStart_tap" />
+                        </StackLayout>
+                        <Image src="" stretch ="none" />              
+                    </DockLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Settings">
+                <TabViewItem.view>
+                    <StackLayout>
+                            <Label text="Change image every" textWrap="true" />
+                            <StackLayout orientation="horizontal">
+                            <TextField keyboardType="number" hint="3" text="{{  }}" />
+                            <Label text=" seconds" textWrap="true" />
+                        </StackLayout>
+                            <Label text="Display for" textWrap="true" />
+                            <StackLayout orientation="horizontal">
+                            <TextField hint="3" text="{{  }}" />
+                            <Label text="minutes" textWrap="true" />
+                            <TextField hint="0" text="{{  }}" />
+                            <Label text="seconds" textWrap="true" /> 
+                        </StackLayout>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+    
 </Page>
