@@ -5,14 +5,8 @@ exports.onLoaded = function(args){
   topmost = frameModule.topmost();
 }
 
-exports.get_effect_tap = function(){
-  var navigationEntry = {
-    moduleName: "views/get-effect/get-effect",
-    context: {buildUI:true},
-    animated: true
-    }
-    
-  topmost.navigate(navigationEntry);
+exports.get_effect_tap = function(){    
+  topmost.navigate("views/get-effect/get-effect");
 }
 
 exports.about_tap = function(){
