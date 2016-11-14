@@ -7,7 +7,7 @@
                         <StackLayout dock="bottom">
                             <Button width="100%" height="auto" text="Start" tap="onStart_tap" />
                         </StackLayout>
-                        <Image src="" stretch ="none" />              
+                        <Image id="effectGet_image" src="" stretch ="none" />              
                     </DockLayout>
                 </TabViewItem.view>
             </TabViewItem>
@@ -16,14 +16,14 @@
                     <StackLayout>
                             <Label text="Change image every" textWrap="true" />
                             <StackLayout orientation="horizontal">
-                            <TextField keyboardType="number" hint="3" text="{{  }}" />
+                            <TextField id="imageDuration_field" keyboardType="number" hint="3" text="{{  }}" />
                             <Label text=" seconds" textWrap="true" />
                         </StackLayout>
                             <Label text="Display for" textWrap="true" />
                             <StackLayout orientation="horizontal">
-                            <TextField hint="3" text="{{  }}" />
+                            <TextField id="displayForMinutes_field" keyboardType="number" hint="3" text="{{  }}" />
                             <Label text="minutes" textWrap="true" />
-                            <TextField hint="0" text="{{  }}" />
+                            <TextField id="displayForSeconds_field" keyboardType="number" hint="0" text="{{  }}" />
                             <Label text="seconds" textWrap="true" /> 
                         </StackLayout>
                     </StackLayout>
