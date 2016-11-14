@@ -5,3 +5,6 @@ tmp/
 .vscode
 *.js
 *.js.map
+
+#art
+./art/*.jpg
