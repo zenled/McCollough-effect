@@ -7,7 +7,7 @@
                         <StackLayout dock="bottom">
                             <Button width="100%" height="auto" text="Start" tap="onStart_tap" />
                         </StackLayout>
-                        <Image id="effectGet_image" src="" stretch ="none" />              
+                        <Image id="effectGet_image" src="http://www.google.com/images/errors/logo_sm_2.png" stretch ="none" />              
                     </DockLayout>
                 </TabViewItem.view>
             </TabViewItem>
