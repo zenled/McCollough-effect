@@ -3,6 +3,7 @@ import pages = require("ui/page");
 import textFieldModule = require("ui/text-field");
 import EventData = require("data/observable")
 import ImageModule = require("ui/image");
+import buttonModule = require("ui/button");
 let timer = require("timer");
 var imageSource = require("image-source");
 
@@ -14,6 +15,7 @@ let imageDuration_field: textFieldModule.TextField;
 let displayForMinutes_field: textFieldModule.TextField;
 let displayForSeconds_field: textFieldModule.TextField;
 let effectGet_image: ImageModule.Image;
+let start_button: buttonModule.Button;
 
 // Data
 enum McColloughImage{
@@ -21,11 +23,17 @@ enum McColloughImage{
     green
 }
 
+enum Mode{
+    gettingEffect,
+    stopped
+}
+
 let imageDuration: number = 3;
 let displayForMinutes: number;
 let displayForSeconds: number;
 let displayDuration: number = 20; //in seconds
-let currentImage = McColloughImage.red;
+let mode:Mode;
+let currentImage;
 
 
 
@@ -46,32 +54,13 @@ exports.onLoaded = function(args: observable.EventData){
     displayForMinutes_field = <textFieldModule.TextField> page.getViewById("displayForMinutes_field");
     displayForSeconds_field = <textFieldModule.TextField> page.getViewById("displayForSeconds_field");
     effectGet_image = <ImageModule.Image> page.getViewById("effectGet_image");
+    start_button = <buttonModule.Button> page.getViewById("start_button")
 
     setEventHandlers()
 
+    timerStop();
+    currentImage = McColloughImage.red;
 
-}
-
-exports.onStart_tap = function(){
-    timerStart();
-    console.log("Timer Started");
-
-}
-
-function onTimerEnd(){
-    console.log("TimerEnd")
-}
-
-function onTimerStep(){
-    console.log("TimerStep: " + secondsElapsed);
-    if (currentImage == McColloughImage.red){
-        effectGet_image.src = IMAGE_get_green;
-        currentImage = McColloughImage.green
-    }
-    else{
-        effectGet_image.src = IMAGE_get_red;
-        currentImage = McColloughImage.red;
-    }
 
 }
 
@@ -113,7 +102,55 @@ function setEventHandlers(){
 
 }
 
-// Timer Functions
+
+exports.onStart_tap = function(){
+    switch(mode){
+        case Mode.stopped:
+            mode = Mode.gettingEffect
+            updateStartButton()
+            timerStart();
+            break;
+        case Mode.gettingEffect:
+            mode = Mode.stopped
+            timerStop();
+            updateStartButton()
+            break;
+        }
+}
+
+// Timer Events ------------------------------
+
+function onTimerEnd(){
+    mode = Mode.stopped;
+    updateStartButton();
+}
+
+function onTimerStep(){
+    console.log("TimerStep: " + secondsElapsed);
+    if (currentImage == McColloughImage.red){
+        effectGet_image.src = IMAGE_get_green;
+        currentImage = McColloughImage.green
+    }
+    else{
+        effectGet_image.src = IMAGE_get_red;
+        currentImage = McColloughImage.red;
+    }
+
+}
+
+// UI Functions
+function updateStartButton(){
+    switch(mode){
+        case Mode.gettingEffect:
+            start_button.text="Stop";
+            break;
+        case Mode.stopped:
+            start_button.text="Start";
+            break;
+    }
+}
+
+// Timer Functions ----------------------------
 function timerStart(){
         timerCheck(true);
 }
@@ -145,4 +182,6 @@ function timerCheck(firstCall = false){
 
 function timerStop(){
     timer.clearTimeout(timerID);
+    mode = Mode.stopped;
+    updateStartButton();
 }
