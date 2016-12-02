@@ -56,10 +56,13 @@ exports.onLoaded = function(args: observable.EventData){
     effectGet_image = <ImageModule.Image> page.getViewById("effectGet_image");
     start_button = <buttonModule.Button> page.getViewById("start_button")
 
+    let test = <textFieldModule.TextField> page.getViewById("Test");
+    test.text = "Hello";
+
+
     setEventHandlers()
 
     timerStop();
-    currentImage = McColloughImage.red;
 
 
 }
@@ -68,11 +71,11 @@ function setEventHandlers(){
     // imageDuration_EventHandler
     imageDuration_field.on(textFieldModule.TextField.propertyChangeEvent,function callback(data:any):void{
         let value = data.value;
-        let isValid:boolean = stringValidator.isValidInt(value);
-        if (isValid){
+        if (stringValidator.isValidInt(value)){
             imageDuration = parseInt(value)
         }
         else{
+            
 
         }
     });
@@ -96,7 +99,7 @@ function setEventHandlers(){
             displayForSeconds = parseInt(value)
         }
         else{
-
+            displayForSeconds_field.text = displayForSeconds.toString();
         }
     });
 
@@ -126,7 +129,6 @@ function onTimerEnd(){
 }
 
 function onTimerStep(){
-    console.log("TimerStep: " + secondsElapsed);
     if (currentImage == McColloughImage.red){
         effectGet_image.src = IMAGE_get_green;
         currentImage = McColloughImage.green
@@ -152,13 +154,16 @@ function updateStartButton(){
 
 // Timer Functions ----------------------------
 function timerStart(){
-        timerCheck(true);
+    currentImage = McColloughImage.red;
+    effectGet_image.src = IMAGE_get_red;
+    timerCheck(true);
 }
 
 function timerCheck(firstCall = false){
     if (firstCall){
         secondsElapsed = 0;
         secondsSinceLastStep = 0;
+        
 
         timerID = timer.setTimeout(timerCheck, timerWaitTime)
     }

@@ -12,8 +12,8 @@ export class stringValidator{
         return true;
     }
 
-    private static filterInt (value) {
-    if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
+    private static filterInt (value:string) {
+    if(value.match(/^[0-9]+$/) != null )
         return parseInt(value);
     throw new Error("Not a Number");
     }
