@@ -12,8 +12,8 @@
 
             <TabViewItem title="Test">
                 <TabViewItem.view>
-                    <StackLayout>
-                        
+                    <StackLayout width="100%" height="100%">
+                        <Image src="res://bw_test" width="100%" height="auto" verticalAlignment="center" horizontalAlignment="center"/>
                     </StackLayout>
                 </TabViewItem.view>
             </TabViewItem>
