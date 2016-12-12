@@ -7,6 +7,8 @@ import buttonModule = require("ui/button");
 let timer = require("timer");
 var imageSource = require("image-source");
 
+import * as Toast from 'nativescript-toast';
+
 import {stringValidator} from "../../shared";
 
 // Page Components
@@ -36,9 +38,9 @@ let mode:Mode;
 let currentImage;
 
 // defaults
-let imageDuration_defaule:number = 3;
-let displayForMinutes_defaul = 3;
-let displayForSeconds_default = 0;
+let imageDuration_default:number = 3;
+let displayForMinutes_defaul:number = 3;
+let displayForSeconds_default:number = 0;
 
 
 
@@ -96,6 +98,8 @@ function updateStartButton(){
 }
 
 function makeToast(message:string="Please check your Settings"){
+    let toast:Toast.Toast = Toast.makeText(message);
+    toast.show()
 
 }
 
@@ -119,6 +123,11 @@ function UpdateInputs():boolean{
 
 function updateImageDuration():boolean{
     let str = imageDuration_field.text;
+    
+    if (str == ""){
+        imageDuration = imageDuration = imageDuration_default;
+        return true;
+    }
 
     if (stringValidator.isValidInt(str)){
         imageDuration = parseInt(str)
