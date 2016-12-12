@@ -131,9 +131,17 @@ function updateDisplayFor():boolean{
     let str_seconds = displayForSeconds_field.text
     let str_minutes = displayForMinutes_field.text
 
-    if (stringValidator.isValidInt(str_seconds) && stringValidator.isValidInt(str_minutes)){
-        let sec = parseInt(str_seconds)
-        let min = parseInt(str_minutes)
+    if ((stringValidator.isValidInt(str_seconds) || str_seconds == "") && 
+        (stringValidator.isValidInt(str_minutes)|| str_minutes == "")){
+        let sec, min;
+        if (str_seconds != "")    
+            sec = parseInt(str_seconds);
+        else
+            sec = displayForSeconds_default;
+        if (str_minutes != "")
+            min = parseInt(str_minutes);
+        else
+            min = displayForMinutes_defaul;
 
         if (sec > 59 || min > 59){
             return false
