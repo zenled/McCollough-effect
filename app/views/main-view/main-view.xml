@@ -1,19 +1,24 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
+    <Page.actionBar>
+        <ActionBar title="McCollough Effect"/>
+    </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabView.items>
             <TabViewItem title="Main">
                 <TabViewItem.view>
-                    <StackLayout>
-                        <Button text="Get effect" tap="get_effect_tap" />
-                        <Button text="About" tap="about_tap"></Button>
+                    <StackLayout orientation="horizontal">
+                        <StackLayout orientation="vertical" verticalAlignment="center" horizontalAlignment="center">
+                            <Button text="Get effect" tap="get_effect_tap" width="100%"/>
+                            <Button text="About" tap="about_tap" width="100%"></Button>
+                        </StackLayout>
                     </StackLayout>                    
                 </TabViewItem.view>
             </TabViewItem>
 
             <TabViewItem title="Test">
                 <TabViewItem.view>
-                    <StackLayout width="100%" height="100%">
-                        <Image src="res://bw_test" width="100%" height="auto" verticalAlignment="center" horizontalAlignment="center"/>
+                    <StackLayout orientation="horizontal">
+                        <Image src="res://bw_test" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center"/>                        
                     </StackLayout>
                 </TabViewItem.view>
             </TabViewItem>
