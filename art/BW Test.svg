@@ -13,11 +13,11 @@
    height="70"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="BW Test.svg"
-   inkscape:export-filename="D:\Zen\Inkscape\McCollough effect\B&amp;W Test.png"
-   inkscape:export-xdpi="2700"
-   inkscape:export-ydpi="2700">
+   inkscape:export-filename="/home/zed/Projects/McCollough-effect/art/bw_test"
+   inkscape:export-xdpi="2520"
+   inkscape:export-ydpi="2520">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -27,18 +27,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="33.988845"
-     inkscape:cy="32.125365"
+     inkscape:zoom="11.2"
+     inkscape:cx="16.533198"
+     inkscape:cy="39.252934"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      borderlayer="true"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1003"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -56,7 +56,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
