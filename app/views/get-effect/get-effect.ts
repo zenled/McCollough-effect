@@ -17,7 +17,7 @@ let displayForSeconds_field: textFieldModule.TextField;
 let effectGet_image: ImageModule.Image;
 let start_button: buttonModule.Button;
 
-// Data
+// data
 enum McColloughImage{
     red,
     green
@@ -28,18 +28,23 @@ enum Mode{
     stopped
 }
 
-let imageDuration: number = 3;
+let imageDuration: number;
 let displayForMinutes: number;
 let displayForSeconds: number;
 let displayDuration: number = 20; //in seconds
 let mode:Mode;
 let currentImage;
 
+// defaults
+let imageDuration_defaule:number = 3;
+let displayForMinutes_defaul = 3;
+let displayForSeconds_default = 0;
+
 
 
 // Resources
-let IMAGE_get_red = imageSource.fromResource("get_red");
-let IMAGE_get_green = imageSource.fromResource("get_green");
+let IMAGE_get_red:string = "res://get_red"
+let IMAGE_get_green:string = "res://get_green"
 
 // Timer Data
 let timerID;
@@ -56,59 +61,16 @@ exports.onLoaded = function(args: observable.EventData){
     effectGet_image = <ImageModule.Image> page.getViewById("effectGet_image");
     start_button = <buttonModule.Button> page.getViewById("start_button")
 
-    let test = <textFieldModule.TextField> page.getViewById("Test");
-    test.text = "Hello";
-
-
-    setEventHandlers()
-
     timerStop();
-
-
 }
 
-function setEventHandlers(){
-    // imageDuration_EventHandler
-    imageDuration_field.on(textFieldModule.TextField.propertyChangeEvent,function callback(data:any):void{
-        let value = data.value;
-        if (stringValidator.isValidInt(value)){
-            imageDuration = parseInt(value)
-        }
-        else{
-            
-
-        }
-    });
-
-    // displayFor_EventHandler
-    displayForMinutes_field.on(textFieldModule.TextField.propertyChangeEvent, function callback(data: any):void{
-        let value = data.value;
-        let isValid:boolean = stringValidator.isValidInt(value);
-        if (isValid){
-            displayForMinutes = parseInt(value)
-        }
-        else{
-
-        }
-    });
-
-    displayForSeconds_field.on(textFieldModule.TextField.propertyChangeEvent, function callback(data: any):void{
-        let value = data.value;
-        let isValid:boolean = stringValidator.isValidInt(value);
-        if (isValid){
-            displayForSeconds = parseInt(value)
-        }
-        else{
-            displayForSeconds_field.text = displayForSeconds.toString();
-        }
-    });
-
-}
-
-
+// ****************************************** Inputs *****************************
 exports.onStart_tap = function(){
     switch(mode){
         case Mode.stopped:
+            let suces = UpdateInputs()
+            if (!suces)
+                break;
             mode = Mode.gettingEffect
             updateStartButton()
             timerStart();
@@ -121,26 +83,7 @@ exports.onStart_tap = function(){
         }
 }
 
-// Timer Events ------------------------------
-
-function onTimerEnd(){
-    mode = Mode.stopped;
-    updateStartButton();
-}
-
-function onTimerStep(){
-    if (currentImage == McColloughImage.red){
-        effectGet_image.src = IMAGE_get_green;
-        currentImage = McColloughImage.green
-    }
-    else{
-        effectGet_image.src = IMAGE_get_red;
-        currentImage = McColloughImage.red;
-    }
-
-}
-
-// UI Functions
+// ******************************************** UI ******************************
 function updateStartButton(){
     switch(mode){
         case Mode.gettingEffect:
@@ -149,6 +92,80 @@ function updateStartButton(){
         case Mode.stopped:
             start_button.text="Start";
             break;
+    }
+}
+
+function makeToast(message:string="Please check your Settings"){
+
+}
+
+// ******************************************** Data *************************************
+/**
+ * @returns True if input is valid
+ */
+function UpdateInputs():boolean{
+    let sucess = updateImageDuration()
+    if (!sucess){
+        makeToast()
+    }
+    if (sucess){
+        sucess = updateDisplayFor()
+        if (!sucess){
+            makeToast()
+        }
+    }
+    return sucess
+}
+
+function updateImageDuration():boolean{
+    let str = imageDuration_field.text;
+
+    if (stringValidator.isValidInt(str)){
+        imageDuration = parseInt(str)
+        return true;
+    }
+    return false;
+}
+
+function updateDisplayFor():boolean{
+    let str_seconds = displayForSeconds_field.text
+    let str_minutes = displayForMinutes_field.text
+
+    if (stringValidator.isValidInt(str_seconds) && stringValidator.isValidInt(str_minutes)){
+        let sec = parseInt(str_seconds)
+        let min = parseInt(str_minutes)
+
+        if (sec > 59 || min > 59){
+            return false
+        }
+
+        let inSeconds = sec + (min * 60)
+        if (inSeconds == 0)
+            return false;
+        
+        displayDuration = inSeconds
+
+        return true
+    }
+
+}
+
+// *********************************************** TIMER *******************************
+// Timer Events -------------
+
+function onTimerEnd(){
+    mode = Mode.stopped;
+    updateStartButton();
+}
+
+function onTimerStep(){
+    if (currentImage == McColloughImage.red){
+        effectGet_image.src = IMAGE_get_green
+        currentImage = McColloughImage.green;
+    }
+    else{
+        effectGet_image.src = IMAGE_get_red
+        currentImage = McColloughImage.red;
     }
 }
 
