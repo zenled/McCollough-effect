@@ -130,8 +130,11 @@ function updateImageDuration():boolean{
     }
 
     if (stringValidator.isValidInt(str)){
-        imageDuration = parseInt(str)
-        return true;
+        let duration = parseInt(str)
+        if (duration > 0 && duration < 60){
+            imageDuration = duration;
+            return true;
+        }
     }
     return false;
 }
