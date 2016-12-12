@@ -4,6 +4,8 @@ import textFieldModule = require("ui/text-field");
 import EventData = require("data/observable")
 import ImageModule = require("ui/image");
 import buttonModule = require("ui/button");
+import frameModule = require("ui/frame");
+var topmost = frameModule.topmost();
 let timer = require("timer");
 var imageSource = require("image-source");
 
@@ -101,6 +103,10 @@ function makeToast(message:string="Please check your Settings"){
     let toast:Toast.Toast = Toast.makeText(message);
     toast.show()
 
+}
+
+exports.onNavBtnTapBack = function(){
+    topmost.navigate("views/main-view/main-view")
 }
 
 // ******************************************** Data *************************************

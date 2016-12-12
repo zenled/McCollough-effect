@@ -1,4 +1,9 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
+    <Page.actionBar>
+        <ActionBar title="McCollough Effect">
+             <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTapBack"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabView.items>
             <TabViewItem title="Get">
@@ -13,20 +18,19 @@
             </TabViewItem>
             <TabViewItem title="Settings">
                 <TabViewItem.view>
-                    <StackLayout>
-                            <Label text="Change image every" textWrap="true" />
-                            <StackLayout orientation="horizontal">
-                            <TextField id="imageDuration_field" keyboardType="number" hint="3" text=""/>
-                            <Label text=" seconds" textWrap="true" />
-                        </StackLayout>
-                            <Label text="Display for" textWrap="true" />
-                            <StackLayout orientation="horizontal">
-                            <TextField id="displayForMinutes_field" keyboardType="number" hint="3" text="" />
-                            <Label text="minutes" textWrap="true" />
-                            <TextField id="displayForSeconds_field" keyboardType="number" hint="0" text="" />
-                            <Label text="seconds" textWrap="true" /> 
-                            <Label id="Test"/>
-                        </StackLayout>
+                    <StackLayout class="verticalCenter">
+                            <Label text="Change image every:" textWrap="true" />
+                            <StackLayout orientation="horizontal" class="horizontalCenter">
+                                <TextField id="imageDuration_field" keyboardType="number" hint="3" text=""/>
+                                <Label text=" seconds" textWrap="true" />
+                            </StackLayout>
+                            <Label text="Display for:" textWrap="true" />
+                            <StackLayout orientation="horizontal" class="horizontalCenter" width="100%">
+                                <TextField id="displayForMinutes_field" keyboardType="number" hint="3" text="" />
+                                <Label text="minutes" textWrap="true" />
+                                <TextField id="displayForSeconds_field" keyboardType="number" hint="0" text="" />
+                                <Label text="seconds" textWrap="true" /> 
+                            </StackLayout>
                     </StackLayout>
                 </TabViewItem.view>
             </TabViewItem>
