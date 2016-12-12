@@ -6,11 +6,11 @@
   "nativescript": {
     "id": "org.nativescript.McCollougheffect",
     "tns-android": {
-      "version": "2.3.0"
+      "version": "2.4.1"
     }
   },
   "dependencies": {
-    "tns-core-modules": "2.3.0"
+    "tns-core-modules": "^2.4.2"
   },
   "devDependencies": {
     "babel-traverse": "6.18.0",
