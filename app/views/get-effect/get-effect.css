@@ -15,6 +15,7 @@ textField{
     horizontal-align: center;
 }
 
-.verticalCenter{
-    vertical-align: center;
+TextField{
+    text-align: center;
+    width: 40dp;
 }
