@@ -16,4 +16,4 @@ Android application demonstrating McCollough effect.
 
 
 ## About
-App is made with NativeScript and TypeSctipt
+App is made with NativeScript and TypeScript
