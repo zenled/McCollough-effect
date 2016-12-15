@@ -1,6 +1,6 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
     <Page.actionBar>
-        <ActionBar title="McCollough Effect"/>
+        <ActionBar title="McCollough effect"/>
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabView.items>

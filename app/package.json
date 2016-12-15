@@ -1,27 +1,27 @@
 {
-	"name": "tns-template-hello-world-ts",
+	"name": "mccollough-effect",
 	"main": "app.js",
 	"version": "2.3.0",
-	"author": "Telerik <support@telerik.com>",
-	"description": "Nativescript hello-world-ts project template",
+	"author": "KukumoRaketo",
+	"description": "NativeScript application demonstrating McCollough effect",
 	"license": "Apache-2.0",
 	"keywords": [
-		"telerik",
-		"mobile",
+		"McCollough",
+		"effect",
 		"nativescript",
 		"{N}",
 		"tns",
-		"appbuilder",
-		"template"
+		"app",
+		"visual"
 	],
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:NativeScript/template-hello-world-ts.git"
+		"url": "https://github.com/ZedTheLed/McCollough-effect"
 	},
 	"bugs": {
-		"url": "https://github.com/NativeScript/template-hello-world-ts/issues"
+		"url": "https://github.com/ZedTheLed/McCollough-effect/issues"
 	},
-	"homepage": "https://github.com/NativeScript/template-hello-world-ts",
+	"homepage": "https://github.com/ZedTheLed/McCollough-effect",
 	"android": {
 		"v8Flags": "--expose_gc"
 	},
