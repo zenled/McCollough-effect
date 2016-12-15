@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.McCollougheffect"  
+    applicationId = "com.KukumoRaketo.McCollougheffect"  
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  

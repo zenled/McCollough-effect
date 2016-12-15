@@ -1,6 +1,6 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
     <Page.actionBar>
-        <ActionBar title="McCollough Effect">
+        <ActionBar title="McCollough effect">
              <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTapBack"></NavigationButton>
         </ActionBar>
     </Page.actionBar>
