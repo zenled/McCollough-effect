@@ -1,0 +1,21 @@
+button {
+    text-transform: uppercase;
+}
+
+label{
+    font-size: 22sp;
+    text-align: center;
+}
+
+textField{
+    font-size: 22sp
+}
+
+.horizontalCenter{
+    horizontal-align: center;
+}
+
+TextField{
+    text-align: center;
+    width: 40dp;
+}

@@ -13,11 +13,11 @@
    height="35"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="Green.svg"
-   inkscape:export-filename="D:\Zen\Inkscape\McCollough effect\Green.png"
-   inkscape:export-xdpi="5400"
-   inkscape:export-ydpi="5400">
+   inkscape:export-filename="/home/zed/Projects/McCollough-effect/art/get_green.png"
+   inkscape:export-xdpi="5040"
+   inkscape:export-ydpi="5040">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -28,17 +28,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="22.627417"
-     inkscape:cx="8.6888663"
-     inkscape:cy="12.991581"
+     inkscape:cx="-1.0230776"
+     inkscape:cy="17.579966"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      borderlayer="true"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1003"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>

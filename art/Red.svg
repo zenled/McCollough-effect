@@ -13,11 +13,13 @@
    height="35"
    id="svg4044"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="Red.svg"
-   inkscape:export-filename="D:\Zen\Inkscape\McCollough effect\Red.png"
-   inkscape:export-xdpi="5400"
-   inkscape:export-ydpi="5400">
+   inkscape:export-filename="/home/zed/Projects/McCollough-effect/art/get_red.png"
+   inkscape:export-xdpi="5142.8599"
+   inkscape:export-ydpi="5142.8599">
+  <title
+     id="title4169">McColloughEffect_red</title>
   <defs
      id="defs4046" />
   <sodipodi:namedview
@@ -27,16 +29,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="44.8"
-     inkscape:cx="20.759992"
-     inkscape:cy="20.857516"
+     inkscape:zoom="22.4"
+     inkscape:cx="1.0440542"
+     inkscape:cy="16.526702"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1003"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -54,7 +56,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>McColloughEffect_red</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

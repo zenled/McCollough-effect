@@ -1,0 +1,32 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+    <Page.actionBar>
+        <ActionBar title="McCollough Effect">
+             <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="onNavBtnTapBack"></NavigationButton>
+        </ActionBar>
+    </Page.actionBar>
+    <ScrollView>
+    <StackLayout orientation="vertical">
+        <Label class="text" text="McCollough effect is a phenomenon of human visual perception.
+Effect is induced by repeatedly looking at two pictures.
+        " textWrap="true" />
+        <StackLayout orientation="horizontal" class="pictures">
+            <Image class="getred" src="res://get_red" height="120dp" width="auto"/>
+            <Image src="res://get_green" height="120dp" width="auto" />
+        </StackLayout>
+        <Label text="After looking at red and green picture for some time, your perception of controll image should change." textWrap="true" />
+        <StackLayout orientation="horizontal" class="pictures">
+            <Image src="res://bw_test" height="120dp" width="auto"/>
+        </StackLayout>
+        <Label text="About application" textWrap="true" class="about_title"/>
+        <Label text="This app is Open-source you can find it on:" textWrap="true" />
+        <Button text="GitHub" tap="openGithub" />
+        
+        <Label text="Made with NativeScript framework" textWrap="true" />
+        
+        
+        
+        
+    </StackLayout>
+    </ScrollView>
+    
+</Page>

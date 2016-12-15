@@ -1,0 +1,23 @@
+.getred{
+    margin-right: 20dp
+}
+
+.pictures{
+    horizontal-align: center;
+}
+
+label{
+        font-size: 19sp;
+        width: 95%;
+}
+
+.about_title{
+    margin-top: 30dp;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+button{
+    text-transform: uppercase
+}
