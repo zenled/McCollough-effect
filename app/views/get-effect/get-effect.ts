@@ -8,6 +8,7 @@ import frameModule = require("ui/frame");
 var topmost = frameModule.topmost();
 let timer = require("timer");
 var imageSource = require("image-source");
+import tabViewModule = require("ui/tab-view");
 
 import * as Toast from 'nativescript-toast';
 
@@ -20,6 +21,7 @@ let displayForMinutes_field: textFieldModule.TextField;
 let displayForSeconds_field: textFieldModule.TextField;
 let effectGet_image: ImageModule.Image;
 let start_button: buttonModule.Button;
+let tabView: tabViewModule.TabView;
 
 // data
 enum McColloughImage{
@@ -64,8 +66,15 @@ exports.onLoaded = function(args: observable.EventData){
     displayForSeconds_field = <textFieldModule.TextField> page.getViewById("displayForSeconds_field");
     effectGet_image = <ImageModule.Image> page.getViewById("effectGet_image");
     start_button = <buttonModule.Button> page.getViewById("start_button")
+    tabView = <tabViewModule.TabView> page.getViewById("tabViewContainer")
+
+    tabView.on(tabViewModule.TabView.selectedIndexChangedEvent, (args: tabViewModule.SelectedIndexChangedEventData) => {
+    clearFocus()
+    });
 
     timerStop();
+
+    clearFocus()
 }
 
 // ****************************************** Inputs *****************************
@@ -107,6 +116,18 @@ function makeToast(message:string="Please check your Settings"){
 
 exports.onNavBtnTapBack = function(){
     topmost.navigate("views/main-view/main-view")
+}
+
+
+
+
+
+function clearFocus(){
+    if (page.android){
+        imageDuration_field.android.clearFocus();
+        displayForMinutes_field.android.clearFocus();
+        displayForSeconds_field.android.clearFocus();
+    }
 }
 
 // ******************************************** Data *************************************
