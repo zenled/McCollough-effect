@@ -4,7 +4,7 @@
     </Page.actionBar>
     <TabView id="tabViewContainer">
         <TabView.items>
-            <TabViewItem title="Main">
+            <TabViewItem title="Effect">
                 <TabViewItem.view>
                     <StackLayout orientation="horizontal">
                         <StackLayout orientation="vertical" verticalAlignment="center" horizontalAlignment="center">
