@@ -5,6 +5,7 @@ import EventData = require("data/observable")
 import ImageModule = require("ui/image");
 import buttonModule = require("ui/button");
 import frameModule = require("ui/frame");
+var insomnia = require("nativescript-insomnia");
 var topmost = frameModule.topmost();
 let timer = require("timer");
 var imageSource = require("image-source");
@@ -200,9 +201,17 @@ function updateDisplayFor():boolean{
 // *********************************************** TIMER *******************************
 // Timer Events -------------
 
+function onTimerStart(){
+    // prevents sleep
+    insomnia.keepAwake();
+}
+
 function onTimerEnd(){
     mode = Mode.stopped;
     updateStartButton();
+
+    // re-enables sleep
+    insomnia.allowSleepAgain();
 }
 
 function onTimerStep(){
@@ -227,7 +236,7 @@ function timerCheck(firstCall = false){
     if (firstCall){
         secondsElapsed = 0;
         secondsSinceLastStep = 0;
-        
+        onTimerStart()
 
         timerID = timer.setTimeout(timerCheck, timerWaitTime)
     }
