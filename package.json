@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "nativescript-insomnia": "^1.2.0",
     "nativescript-toast": "^1.4.3",
     "tns-core-modules": "^2.5.0"
   },
