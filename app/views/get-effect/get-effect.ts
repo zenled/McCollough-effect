@@ -260,6 +260,5 @@ function timerCheck(firstCall = false){
 
 function timerStop(){
     timer.clearTimeout(timerID);
-    mode = Mode.stopped;
-    updateStartButton();
+    onTimerEnd()
 }
